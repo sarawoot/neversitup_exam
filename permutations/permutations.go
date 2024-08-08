@@ -1,5 +1,7 @@
 package permutations
 
+import "fmt"
+
 func Permutations(s string) []string {
 	chars := []rune(s)
 	res := make([]string, 0)
@@ -23,7 +25,7 @@ func generateStr(chars []rune, start int, result *[]string) {
 	}
 
 	for i := start; i < len(chars); i++ {
-		// fmt.Println(i, start, string(chars))
+		fmt.Println(i, start, string(chars))
 		chars[start], chars[i] = chars[i], chars[start]
 		generateStr(chars, start+1, result)
 		chars[start], chars[i] = chars[i], chars[start]
